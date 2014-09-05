@@ -1,12 +1,12 @@
 {
   "name": "can-compile-brunch",
   "version": "0.1.0",
-  "description": "Adds Mustache support to brunch via HoganJs.",
-  "author": "aldo",
+  "description": "Adds CanJS pre-compiled templates support to Brunch",
+  "author": "Aldo Lopez",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mdp/hoganjs-brunch.git"
+    "url": "git@github.com:aldoivan/can-compile-brunch.git"
   },
   "scripts": {
   },
@@ -15,13 +15,10 @@
   },
   "dependencies": {
     "coffee-script": "1.6.3",
-    "handlebars": "~1.3.0",
-    "umd-wrapper": "~0.1.0",
-    "can-compile":"0.7.0",
-    "glob-whatev": "0.1.8"
+    "can-compile":"0.7.0"
   },
   "devDependencies": {
-    "mocha": "0.12.1",
-    "expect.js": "0.1.2"
+    "mocha": "1.21.4",
+    "chai": "1.9.1"
   }
 }
