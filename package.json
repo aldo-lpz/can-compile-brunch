@@ -9,6 +9,7 @@
     "url": "git@github.com:aldoivan/can-compile-brunch.git"
   },
   "scripts": {
+    "test": "node_modules/.bin/mocha --compilers coffee:coffee-script"
   },
   "engines": {
     "node": "~0.10.0"

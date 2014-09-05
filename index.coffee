@@ -1,20 +1,20 @@
 fs       = require 'fs'
 compiler = require 'can-compile'
-globsync = require 'glob-whatev'
 syspath  = require 'path'
-umd = require 'umd-wrapper'
 
 module.exports = class CanCompiler
   brunchPlugin : yes
   type         : 'template'
   extension    : 'mustache'
   pattern      : /\.(?:mustache|stache)$/
-  # include  : [
-  #   sysPath.join(__dirname, 'node_modules', 'handlebars', 'dist', includeFile)
-  # ]
+  options      : {}
 
   constructor: (@config) ->
-    @basePath = syspath.resolve(@config.paths.root)
+    @options =
+      version  : @config.plugins.canCompile.version or '2.1.1'
+      basePath : syspath.resolve(@config.paths.root)
+
+    @options.moduleWrapper = if @options.version.indexOf('2.1') is 0 then 'preloadStringRenderer' else 'preload'
 
   compile : (data, path, callback) ->
     
