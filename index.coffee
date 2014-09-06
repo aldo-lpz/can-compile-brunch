@@ -1,8 +1,8 @@
-fs       = require 'fs'
-compiler = require 'can-compile'
-syspath  = require 'path'
+fs      = require 'fs'
+can     = require 'can-compile'
+syspath = require 'path'
 
-module.exports = class CanCompiler
+module.exports = class CanCompile
   brunchPlugin : yes
   type         : 'template'
   extension    : 'mustache'
@@ -24,12 +24,11 @@ module.exports = class CanCompiler
         normalizer : (filename) =>
           return syspath.relative(@options.basePath + '/app', filename)
 
-    compiler.compile config, (error, out, compiled) ->
+    can.compile config, (error, out, compiled) =>
         if error
           callback error
         else
-          result = 'module.exports = can.view.preloadStringRenderer("' + compiled.id + '",' + out + ');'
-          callback null, result
+          callback null, "module.exports = #{@options.moduleWrapper}(#{compiled.id}, #{out});"
 
 
 
