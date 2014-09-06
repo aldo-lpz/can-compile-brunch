@@ -1,4 +1,4 @@
-Plugin = require('./')
+Plugin = require('../')
 should = require('chai').should()
 
 describe 'Plugin', ->
