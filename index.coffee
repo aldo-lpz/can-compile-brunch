@@ -11,7 +11,7 @@ module.exports = class CanCompile
 
   constructor: (@config) ->
     @options =
-      version  : @config.plugins.canCompile.version or '2.1.1'
+      version  : @config.plugins.canCompile.version or '2.1.3'
       basePath : syspath.resolve(@config.paths.root)
 
     @options.moduleWrapper = if @options.version.indexOf('2.1') is 0 then 'preloadStringRenderer' else 'preload'
