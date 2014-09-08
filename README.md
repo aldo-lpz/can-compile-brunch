@@ -3,6 +3,26 @@ can-compile-brunch
 
 Simple Brunch plugin to add support for mustache pre-compiled templates using [can-compile](https://github.com/daffl/can-compile) for CanJS views.
 
+## Usage
+
+Install the plugin via npm with `npm install --save can-compile-brunch`.
+
+Or, do manual install:
+
+* Add `"can-compile-brunch": "x.y.z"` to `package.json` of your brunch app.
+* If you want to use git version of plugin, add
+`"can-compile-brunch": "git+ssh://git@github.com:aldoivan/can-compile-brunch.git"`.
+
+_Optional_ Specify the CanJS version to compile your views:
+
+```coffeescript
+exports.config =
+  # ...
+  plugins:
+    canCompile:
+      version: '2.1.3'
+```
+
 ## License
 
 The MIT License (MIT)

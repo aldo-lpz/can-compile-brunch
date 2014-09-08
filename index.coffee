@@ -12,7 +12,7 @@ module.exports = class CanCompile
   constructor: (@config) ->
     @options =
       version  : @config.plugins.canCompile.version or '2.1.3'
-      basePath : syspath.resolve(@config.paths.root)
+      basePath : syspath.resolve @config.paths.root
 
     @options.moduleWrapper = if @options.version.indexOf('2.1') is 0 then 'preloadStringRenderer' else 'preload'
 
@@ -22,13 +22,13 @@ module.exports = class CanCompile
         filename   : path
         version    : @options.version
         normalizer : (filename) =>
-          return syspath.relative(@options.basePath + '/app', filename)
+          return syspath.relative @options.basePath + '/app', filename
 
     can.compile config, (error, out, compiled) =>
         if error
           callback error
         else
-          callback null, "module.exports = #{@options.moduleWrapper}(#{compiled.id}, #{out});"
+          callback null, "module.exports = can.view.#{@options.moduleWrapper}(#{compiled.id}, #{out});"
 
 
 
