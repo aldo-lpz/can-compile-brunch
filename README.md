@@ -1,7 +1,6 @@
 can-compile-brunch
 ==================
 
----
 Simple Brunch plugin to add support for mustache pre-compiled templates using [can-compile](https://github.com/daffl/can-compile) for CanJS views.
 
 ## License
