@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Adds CanJS pre-compiled templates support to Brunch",
   "author": "Aldo Lopez",
-  "homepage": "",
+  "main":"index.coffee",
   "repository": {
     "type": "git",
     "url": "git@github.com:aldoivan/can-compile-brunch.git"
