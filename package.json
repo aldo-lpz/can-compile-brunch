@@ -1,6 +1,6 @@
 {
   "name": "can-compile-brunch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Adds CanJS pre-compiled templates support to Brunch",
   "author": "Aldo Lopez",
   "main":"index.coffee",
